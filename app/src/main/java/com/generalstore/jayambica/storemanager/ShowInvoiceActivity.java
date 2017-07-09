@@ -112,6 +112,7 @@ public class ShowInvoiceActivity extends AppCompatActivity {
 
         switch (toShow) {
 
+
             case Constants.ShowInvoiceActivity.SHOW_PURCHASE_INVOICE: {
                 viewPager.setCurrentItem(0);
                 break;

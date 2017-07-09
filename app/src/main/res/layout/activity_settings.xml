@@ -13,13 +13,10 @@
         android:elevation="4dp"
         android:theme="@style/AppTheme.Toolbar" />
 
-    <Button
-        android:id="@+id/changePinButton_SettingsActivity"
-        style="@style/AppTheme.ButtonBorderlessInList"
+    <LinearLayout
+        android:id="@+id/settingsActivity_main_linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Change security pin" />
-
-    <include layout="@layout/divider_layout" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
 
 </LinearLayout>

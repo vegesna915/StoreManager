@@ -78,6 +78,8 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.settings_MainMenu_homeActivity: {
 
                 Intent toSettingActivity = new Intent(HomeActivity.this, SettingsActivity.class);
+                toSettingActivity.putExtra(Constants.SettingsActivity.FRAGMENT_SETTING_ACTIVITY,
+                        Constants.SettingsActivity.DEFAULT_SETTINGS_ACTIVITY);
                 startActivity(toSettingActivity);
 
                 break;

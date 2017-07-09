@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.generalstore.jayambica.storemanager.Extra.Constants;
 import com.generalstore.jayambica.storemanager.Fragments.ShopActivityFragments.MainShopActivityFragment;
@@ -14,10 +15,9 @@ import com.generalstore.jayambica.storemanager.Fragments.ShopActivityFragments.S
 
 public class ShopActivity extends AppCompatActivity {
 
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
     String intentFrom;
-
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class ShopActivity extends AppCompatActivity {
 
         fragmentTransaction.replace(R.id.shopActivity_main_linearLayout, new SalesFragment());
         fragmentTransaction.addToBackStack(null);
+
         fragmentTransaction.commit();
 
     }
@@ -64,5 +65,20 @@ public class ShopActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home: {
+                onBackPressed();
+            }
+
+        }
+
+        return true;
+    }
+
 
 }

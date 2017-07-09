@@ -46,6 +46,7 @@
             android:name=".ShopActivity"
             android:label="Shop"
             android:parentActivityName=".HomeActivity" />
+        <activity android:name=".AddInvoiceItemsActivity"></activity>
     </application>
 
 </manifest>

@@ -38,8 +38,12 @@ public class Constants {
 
     }
 
-    public static class CurrentStockActivity {
+    public static class SettingsActivity {
 
+        public static final String FRAGMENT_SETTING_ACTIVITY = "FRAGMENT_SETTING_ACTIVITY";
+        public static final String DEFAULT_SETTINGS_ACTIVITY = "DEFAULT_FRAGMENT_SETTINGS_ACTIVITY";
+        public static final String ADD_ITEM_SETTINGS_ACTIVITY = "ADD_ITEM_FRAGMENT_SETTINGS_ACTIVITY";
+        public static final String ADD_VENDOR_SETTINGS_ACTIVITY = "ADD_VENDOR_FRAGMENT_SETTINGS_ACTIVITY";
 
     }
 
@@ -55,8 +59,8 @@ public class Constants {
 
 
         public static final String TO_ADD = "TO_ADD";
-        public static final String ADD_PURCHASE_INVOICE = "SHOW_PURCHASE_INVOICE";
-        public static final String ADD_SALE_INVOICE = "SHOW_SALE_INVOICE";
+        public static final String ADD_PURCHASE_INVOICE = "ADD_PURCHASE_INVOICE";
+        public static final String ADD_SALE_INVOICE = "ADD_SALE_INVOICE";
 
     }
 
