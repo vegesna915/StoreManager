@@ -1,9 +1,9 @@
-package com.generalstore.jayambica.storemanager.Fragments;
+package com.generalstore.jayambica.storemanager.Fragments.StartActivityFragments;
 
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +26,7 @@ public class LoginFragment extends Fragment {
 
         startActivity = (StartActivity) getActivity();
 
-        View v = inflater.inflate(R.layout.login_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_login, container, false);
         userEmailView = (EditText) v.findViewById(R.id.userName_login);
         passwordView = (EditText) v.findViewById(R.id.password_login);
 

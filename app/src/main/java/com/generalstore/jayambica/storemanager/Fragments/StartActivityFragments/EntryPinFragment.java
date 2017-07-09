@@ -1,19 +1,18 @@
-package com.generalstore.jayambica.storemanager.Fragments;
+package com.generalstore.jayambica.storemanager.Fragments.StartActivityFragments;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.generalstore.jayambica.storemanager.Extra.Constants;
 import com.generalstore.jayambica.storemanager.HomeActivity;
@@ -23,28 +22,29 @@ import com.generalstore.jayambica.storemanager.StartActivity;
 import java.util.ArrayList;
 
 
-public class SetPinFragment extends Fragment implements View.OnClickListener {
+public class EntryPinFragment extends Fragment implements View.OnClickListener {
+
 
     Button button1, button2, button3, button4, button5,
             button6, button7, button8, button9, button0, forgot_button;
     ImageButton back_button;
-    ArrayList<ImageView> pinImages = new ArrayList<>();
-    TextView textView;
     StartActivity startActivity;
+    ArrayList<ImageView> pinImages = new ArrayList<>();
+    String pinOriginal;
+
     String pinString = "";
-    String pinOriginal = "";
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         startActivity = (StartActivity) getActivity();
 
-        View v = inflater.inflate(R.layout.entry_pin_fragment, container, false);
+        SharedPreferences sharedPreferences = startActivity.getSharedPreferences(
+                Constants.SharedPreference.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+        pinOriginal = sharedPreferences.getString(Constants.SharedPreference.PIN, "");
 
-        textView = (TextView) v.findViewById(R.id.texView_pinFragment);
-        textView.setText("Enter 4 Digit Pin");
+        View v = inflater.inflate(R.layout.fragment_entry_pin, container, false);
 
         button1 = (Button) v.findViewById(R.id.number_1);
         button1.setOnClickListener(this);
@@ -67,7 +67,7 @@ public class SetPinFragment extends Fragment implements View.OnClickListener {
         button0 = (Button) v.findViewById(R.id.number_0);
         button0.setOnClickListener(this);
         forgot_button = (Button) v.findViewById(R.id.forgotButton_pin);
-        forgot_button.setVisibility(View.GONE);
+        forgot_button.setOnClickListener(this);
         back_button = (ImageButton) v.findViewById(R.id.back_pin);
         back_button.setOnClickListener(this);
 
@@ -75,14 +75,23 @@ public class SetPinFragment extends Fragment implements View.OnClickListener {
         pinImages.add((ImageView) v.findViewById(R.id.pinImage2));
         pinImages.add((ImageView) v.findViewById(R.id.pinImage3));
         pinImages.add((ImageView) v.findViewById(R.id.pinImage4));
+
         return v;
     }
 
+
     @Override
     public void onClick(View v) {
+
+
         switch (v.getId()) {
 
             case R.id.forgotButton_pin: {
+                SharedPreferences sharedPref = startActivity.getSharedPreferences(
+                        Constants.SharedPreference.SHARED_PREFERENCE, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean(Constants.SharedPreference.IS_LOGIN, false);
+                editor.apply();
                 startActivity.changeFragmentToLogin();
                 break;
             }
@@ -106,38 +115,18 @@ public class SetPinFragment extends Fragment implements View.OnClickListener {
 
         if (pinString.length() >= 4) {
 
-            if (pinOriginal.equals("")) {
-                pinOriginal = pinString;
+            if (pinOriginal.equals(pinString)) {
+                Intent toHomeActivity = new Intent(startActivity, HomeActivity.class);
+                startActivity.startActivity(toHomeActivity);
+                startActivity.finish();
+            } else {
+                Vibrator vibrator = (Vibrator) startActivity.getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(250);
                 pinString = "";
                 setPinImage();
-                textView.setText("Confirm your 4-digit pin");
-            } else {
-
-                if (pinString.equals(pinOriginal)) {
-
-                    Intent toHomeActivity = new Intent(startActivity, HomeActivity.class);
-                    startActivity(toHomeActivity);
-                    SharedPreferences sharedPreferences = startActivity.getSharedPreferences(
-                            Constants.SharedPreference.SHARED_PREFERENCE, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean(Constants.SharedPreference.IS_LOGIN, true);
-                    editor.putString(Constants.SharedPreference.PIN, pinOriginal);
-                    editor.apply();
-                    startActivity.finish();
-                } else {
-
-                    pinString = "";
-                    pinOriginal = "";
-                    setPinImage();
-                    Vibrator vibrator = (Vibrator) startActivity.getSystemService(Context.VIBRATOR_SERVICE);
-                    vibrator.vibrate(250);
-                    textView.setText("Pin mismatch \n Enter 4-digit pin again");
-
-                }
-
             }
-        }
 
+        }
 
     }
 
@@ -154,6 +143,5 @@ public class SetPinFragment extends Fragment implements View.OnClickListener {
         }
 
     }
-
 
 }

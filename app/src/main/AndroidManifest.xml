@@ -19,7 +19,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity"></activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".CurrentStockActivity"
+            android:label="Current Stock"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ExpireItemsActivity"
+            android:label="Expire Items"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ShowInvoiceActivity"
+            android:label="Invoice"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".AddInvoiceActivity"
+            android:label="Add Invoice"
+            android:parentActivityName=".ShowInvoiceActivity" />
+        <activity
+            android:name=".ShopActivity"
+            android:label="Shop"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

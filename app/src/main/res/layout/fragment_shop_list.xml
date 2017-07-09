@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.generalstore.jayambica.storemanager.Fragments.HomeActivityFragments.ShopListFragment">
+
+    <Button
+        android:id="@+id/shop1Button_shopListFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shop 1" />
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/shop2Button_shopListFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shop 2" />
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/shop3Button_shopListFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shop 3" />
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/shop4Button_shopListFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shop 4" />
+
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/shop5Button_shopListFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shop 5" />
+
+    <include layout="@layout/divider_layout" />
+
+</LinearLayout>
+

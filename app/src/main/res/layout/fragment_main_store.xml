@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.generalstore.jayambica.storemanager.Fragments.HomeActivityFragments.MainStoreFragment">
+
+    <Button
+        android:id="@+id/currentStockButton_mainStoreFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current stock" />
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/purchaseInvoiceButton_mainStoreFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Purchase invoice" />
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/saleInvoiceButton_mainStoreFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sale Invoice" />
+
+
+    <include layout="@layout/divider_layout" />
+
+    <Button
+        android:id="@+id/expireItemsButton_mainStoreFragment"
+        style="@style/AppTheme.ButtonBorderlessInList"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:text="Expire Items" />
+
+    <include layout="@layout/divider_layout" />
+
+</LinearLayout>

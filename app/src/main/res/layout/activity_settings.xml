@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.generalstore.jayambica.storemanager.HomeActivity">
+    tools:context="com.generalstore.jayambica.storemanager.SettingsActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_homeActivity"
+        android:id="@+id/toolbar_settingsActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="4dp"
         android:theme="@style/AppTheme.Toolbar" />
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayout_homeActivity"
+    <Button
+        android:id="@+id/changePinButton_SettingsActivity"
+        style="@style/AppTheme.ButtonBorderlessInList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:theme="@style/AppTheme.Toolbar"
-        app:tabIndicatorColor="@color/colorWhite" />
+        android:text="Change security pin" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager_homeActivity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <include layout="@layout/divider_layout" />
 
 </LinearLayout>
