@@ -25,12 +25,15 @@ public class MainSettingsActivityFragment extends Fragment implements View.OnCli
         // Inflate the layout for this fragment
 
         settingsActivity = (SettingsActivity) getActivity();
+
         if (settingsActivity.getSupportActionBar() != null) {
             settingsActivity.getSupportActionBar().setTitle("Settings");
         }
 
 
         View v = inflater.inflate(R.layout.fragment_main_settings_activity, container, false);
+
+        registerForContextMenu(v);
 
         setListeners(v);
 
@@ -73,7 +76,9 @@ public class MainSettingsActivityFragment extends Fragment implements View.OnCli
                 break;
             }
             case R.id.manageVendorButton_SettingsActivity: {
+
                 settingsActivity.changeToManageVendorsFragment();
+
                 break;
             }
 
@@ -81,5 +86,6 @@ public class MainSettingsActivityFragment extends Fragment implements View.OnCli
 
 
     }
+
 
 }

@@ -3,6 +3,7 @@ package com.generalstore.jayambica.storemanager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.generalstore.jayambica.storemanager.Extra.Constants;
 
@@ -31,5 +32,22 @@ public class CurrentStockActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home: {
+                onBackPressed();
+                break;
+            }
+
+
+        }
+
+
+        return true;
+    }
 
 }

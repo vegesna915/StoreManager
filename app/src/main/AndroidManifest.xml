@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity">
+        <activity
+            android:name=".StartActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +27,8 @@
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".HomeActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".CurrentStockActivity"
             android:label="Current Stock"
@@ -41,12 +44,13 @@
         <activity
             android:name=".AddInvoiceActivity"
             android:label="Add Invoice"
-            android:parentActivityName=".ShowInvoiceActivity" />
+            android:parentActivityName=".ShowInvoiceActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ShopActivity"
             android:label="Shop"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".AddInvoiceItemsActivity"></activity>
+        <activity android:name=".AddInvoiceItemsActivity" />
     </application>
 
 </manifest>

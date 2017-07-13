@@ -51,7 +51,7 @@ public class SetPinFragment extends Fragment implements View.OnClickListener {
 
         textView = (TextView) v.findViewById(R.id.texView_pinFragment);
 
-        textView.setText("Enter new 4-digit pin");
+        textView.setText("Set new 4-digit pin");
 
         button1 = (Button) v.findViewById(R.id.number_1);
         button1.setOnClickListener(this);

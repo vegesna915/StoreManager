@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.generalstore.jayambica.storemanager.Extra.Constants;
+import com.generalstore.jayambica.storemanager.Extra.Utilis;
 import com.generalstore.jayambica.storemanager.R;
 import com.generalstore.jayambica.storemanager.StartActivity;
 
@@ -34,6 +36,9 @@ public class LoginFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Utilis.closeKeyboard(startActivity, v);
+
                 String email = userEmailView.getText().toString();
                 String password = passwordView.getText().toString();
 
@@ -55,6 +60,12 @@ public class LoginFragment extends Fragment {
         });
 
         forgotButton = (Button) v.findViewById(R.id.forgotPassword_login);
+        forgotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(startActivity, "Sorry, can't do anything", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return v;
     }

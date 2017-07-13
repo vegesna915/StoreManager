@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.generalstore.jayambica.storemanager.Adapters.FragmentAdapter_Home;
+import com.generalstore.jayambica.storemanager.Adapters.FragmentAdapters.FragmentAdapter_Home;
 import com.generalstore.jayambica.storemanager.Extra.Constants;
 import com.generalstore.jayambica.storemanager.Fragments.HomeActivityFragments.MainStoreFragment;
 import com.generalstore.jayambica.storemanager.Fragments.HomeActivityFragments.ShopListFragment;

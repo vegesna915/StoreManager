@@ -3,6 +3,22 @@
 
     <string name="startActivity_title_jayambica">Jayambica\nStore Manager</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="spinnerTimeArray_addItemsFragment">
+        <item>Days</item>
+        <item>Months</item>
+        <item>Years</item>
+    </string-array>
+
+    <string-array name="spinnerUnitsArray_addItemsFragment">
+        <item>kg</item>
+        <item>gram</item>
+        <item>litre</item>
+        <item>ml</item>
+    </string-array>
+
+
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
 </resources>

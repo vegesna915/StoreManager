@@ -37,7 +37,6 @@
         android:id="@+id/expireItemsButton_mainStoreFragment"
         style="@style/AppTheme.ButtonBorderlessInList"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:text="Expire Items" />
 

@@ -5,8 +5,14 @@
     android:layout_height="match_parent"
     tools:context="com.generalstore.jayambica.storemanager.Fragments.SettingsActivityFragments.ManageItemsSettingsActivityFragment">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_mangeItemsFragment_SettingsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_addItem_manageItems_settingsActivity"
+        android:id="@+id/fab_addItem_manageItemsFragment_settingsActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

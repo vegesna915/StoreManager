@@ -10,9 +10,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
-import com.generalstore.jayambica.storemanager.Adapters.FragmentAdapter_ShowInvoice;
+import com.generalstore.jayambica.storemanager.Adapters.FragmentAdapters.FragmentAdapter_ShowInvoice;
 import com.generalstore.jayambica.storemanager.Extra.Constants;
 import com.generalstore.jayambica.storemanager.Fragments.ShowInvoiceFragments.PurchaseInvoiceShowFragment;
 import com.generalstore.jayambica.storemanager.Fragments.ShowInvoiceFragments.SaleInvoiceShowFragment;
@@ -126,6 +127,22 @@ public class ShowInvoiceActivity extends AppCompatActivity {
 
         }
 
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home: {
+                onBackPressed();
+                break;
+            }
+
+
+        }
+
+
+        return true;
     }
 }

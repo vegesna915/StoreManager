@@ -1,4 +1,4 @@
-package com.generalstore.jayambica.storemanager.Adapters;
+package com.generalstore.jayambica.storemanager.Adapters.FragmentAdapters;
 
 
 import android.support.v4.app.Fragment;
@@ -7,15 +7,16 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 
-public class FragmentAdapter_Home extends FragmentStatePagerAdapter {
+public class FragmentAdapter_ShowInvoice extends FragmentStatePagerAdapter {
 
     private ArrayList<Fragment> fragments;
     private ArrayList<String> titles;
 
-    public FragmentAdapter_Home(FragmentManager fm, ArrayList<Fragment> fragments, ArrayList<String> titles) {
+    public FragmentAdapter_ShowInvoice(FragmentManager fm, ArrayList<Fragment> fragments, ArrayList<String> titles) {
         super(fm);
-        this.titles = titles;
+
         this.fragments = fragments;
+        this.titles = titles;
 
     }
 
