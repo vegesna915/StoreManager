@@ -64,8 +64,5 @@ public class Constants {
 
     }
 
-    public static class ExpireItemsActivity {
-
-    }
 
 }

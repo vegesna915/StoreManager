@@ -73,7 +73,7 @@ public class ShopListFragment extends Fragment implements View.OnClickListener {
             }
 
             case R.id.shop3Button_shopListFragment: {
-                ;
+
 
                 intent.putExtra(Constants.INTENT_FROM,
                         Constants.HomeActivity.INTENT_FROM_SHOP_SHOP3);
