@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -59,7 +58,6 @@ public class AddItemSettingsActivityFragment extends Fragment {
 
         declarations(v);
 
-        setSpinners();
 
         setListeners();
 
@@ -140,24 +138,6 @@ public class AddItemSettingsActivityFragment extends Fragment {
             }
         });
 
-    }
-
-    private void setSpinners() {
-
-        ArrayAdapter<CharSequence> spinnerTimeAdapter = ArrayAdapter.createFromResource(settingsActivity,
-                R.array.spinnerTimeArray_addItemsFragment, android.R.layout.simple_spinner_item);
-
-        spinnerTimeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinnerTime.setAdapter(spinnerTimeAdapter);
-
-
-        ArrayAdapter<CharSequence> spinnerUnitsAdapter = ArrayAdapter.createFromResource(settingsActivity,
-                R.array.spinnerUnitsArray_addItemsFragment, android.R.layout.simple_spinner_item);
-
-        spinnerUnitsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinnerUnits.setAdapter(spinnerUnitsAdapter);
     }
 
     private void setListeners() {

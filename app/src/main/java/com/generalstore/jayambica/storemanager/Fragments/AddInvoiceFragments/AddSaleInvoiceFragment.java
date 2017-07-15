@@ -27,7 +27,7 @@ public class AddSaleInvoiceFragment extends Fragment {
             addInvoiceActivity.getSupportActionBar().setTitle("Add Sale Invoice");
         }
 
-        View v = inflater.inflate(R.layout.fragment_purchase_invoice_show, container, false);
+        View v = inflater.inflate(R.layout.fragment_add_sale_invoice, container, false);
 
         return v;
     }

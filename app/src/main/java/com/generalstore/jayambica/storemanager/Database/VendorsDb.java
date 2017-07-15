@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.generalstore.jayambica.storemanager.Objects.Vendor;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class VendorsDb {
 
@@ -91,6 +92,45 @@ public class VendorsDb {
 
 
         return vendors;
+    }
+
+
+    public HashMap<String, Vendor> getHashMapAllVendors() {
+
+        HashMap<String, Vendor> hashMapVendors = new HashMap<>();
+
+        Vendor vendor;
+
+
+        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+
+        Cursor cursor = db.query(TABLE_VENDORS_DETAILS, null, null, null, null, null, null);
+
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                vendor = new Vendor();
+
+                vendor.setVendorId(cursor.getString(cursor.getColumnIndex(VENDOR_ID)));
+                vendor.setVendorName(cursor.getString(cursor.getColumnIndex(VENDOR_NAME)));
+                vendor.setVendorPhone(cursor.getString(cursor.getColumnIndex(VENDOR_PHONE)));
+                vendor.setVendorEmail(cursor.getString(cursor.getColumnIndex(VENDOR_EMAIL)));
+                vendor.setVendorStreet(cursor.getString(cursor.getColumnIndex(VENDOR_STREET)));
+                vendor.setVendorCity(cursor.getString(cursor.getColumnIndex(VENDOR_CITY)));
+                vendor.setVendorState(cursor.getString(cursor.getColumnIndex(VENDOR_STATE)));
+                vendor.setVendorCountry(cursor.getString(cursor.getColumnIndex(VENDOR_COUNTRY)));
+                vendor.setVendorZip(cursor.getString(cursor.getColumnIndex(VENDOR_ZIP)));
+                vendor.setVendorIsUpdatedToServer(cursor.getString(cursor.getColumnIndex(VENDOR_IS_UPDATED_TO_SERVER)));
+
+                hashMapVendors.put(vendor.getVendorName(), vendor);
+            }
+            cursor.close();
+        }
+        db.close();
+
+        hashMapVendors.keySet();
+
+        return hashMapVendors;
     }
 
 

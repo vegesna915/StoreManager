@@ -2,52 +2,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.generalstore.jayambica.storemanager.Fragments.SettingsActivityFragments.AddItemSettingsActivityFragment">
+    tools:context="com.generalstore.jayambica.storemanager.Fragments.AddInvoiceFragments.AddPurchaseInvoiceFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linearLayout_main_addItemFragment_settingsActivity"
+
+    <LinearLayout
+        android:id="@+id/linearLayout_main_addPurchaseInvoice_addInvoiceActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
 
-
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/itemName_addItem_SettingsActivity"
+            <AutoCompleteTextView
+                android:id="@+id/vendorName_addPurchaseInvoice_addInvoiceActivity"
                 style="@style/AppTheme.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Item Name"
-                android:inputType="textCapWords" />
+                android:completionThreshold="1"
+                android:hint="Vendor Name"
+                android:inputType="textCapWords"
+                android:textSize="16sp" />
 
         </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="62dp">
+            android:layout_marginTop="8dp">
 
             <TextView
                 style="@style/AppTheme.TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.35"
-                android:text="Brand" />
+                android:layout_weight="0.3"
+                android:text="Phone" />
 
-            <AutoCompleteTextView
-                android:id="@+id/itemBrand_addItemFragment_SettingsActivity"
+            <EditText
+                android:id="@+id/vendorPhoneNumber_addPurchaseInvoice_addInvoiceActivity"
                 style="@style/AppTheme.EditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.65"
+                android:layout_weight="0.7"
                 android:gravity="end"
-                android:hint="Brand Name"
-                android:inputType="textCapSentences"
+                android:hint="Phone number"
+                android:inputType="phone"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -56,130 +57,148 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="8dp">
 
             <TextView
                 style="@style/AppTheme.TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.35"
-                android:text="Weight" />
+                android:layout_weight="0.3"
+                android:text="Email" />
 
-            <RelativeLayout
+            <EditText
+                android:id="@+id/vendorEmail_addPurchaseInvoice_addInvoiceActivity"
+                style="@style/AppTheme.EditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.65">
-
-                <Spinner
-                    android:id="@+id/spinnerUnits_weight_addItemFragment_SettingsActivity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:entries="@array/spinnerUnitsArray_addItemsFragment"
-                    android:gravity="end"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/itemWeight_addItemFragment_SettingsActivity"
-                    style="@style/AppTheme.EditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/spinnerUnits_weight_addItemFragment_SettingsActivity"
-                    android:gravity="end"
-                    android:hint="0.00"
-                    android:inputType="numberDecimal"
-                    android:textSize="16sp" />
-            </RelativeLayout>
+                android:layout_weight="0.7"
+                android:gravity="end"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="32dp">
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp">
 
             <TextView
                 style="@style/AppTheme.TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.35"
-                android:text="Expires In" />
+                android:layout_weight="0.3"
+                android:text="Address" />
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.65">
-
-                <Spinner
-                    android:id="@+id/spinner_expiresIn_addItemFragment_SettingsActivity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:entries="@array/spinnerTimeArray_addItemsFragment"
-                    android:textSize="16sp" />
+                android:layout_weight="0.7"
+                android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/itemExpireTime_addItemFragment_SettingsActivity"
+                    android:id="@+id/vendorAddress_addPurchaseInvoice_addInvoiceActivity"
                     style="@style/AppTheme.EditText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/spinner_expiresIn_addItemFragment_SettingsActivity"
                     android:gravity="end"
-                    android:hint="0.0"
-                    android:inputType="numberDecimal"
+                    android:hint="Address"
+                    android:inputType="textCapWords|textMultiLine"
+                    android:lines="5"
+                    android:minLines="1"
                     android:textSize="16sp" />
 
-            </RelativeLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
 
         <include layout="@layout/divider_layout" />
 
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
 
+            <EditText
+                android:id="@+id/invoiceNumber_addPurchaseInvoice_addInvoiceActivity"
+                style="@style/AppTheme.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Invoice Number"
+                android:inputType="textCapCharacters"
+                tools:ignore="TextFields" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/invoicePONumber_addPurchaseInvoice_addInvoiceActivity"
+                style="@style/AppTheme.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PO Number"
+                android:inputType="textCapCharacters"
+                tools:ignore="TextFields" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp">
+
             <TextView
                 style="@style/AppTheme.TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.35"
-                android:text="Actual Price" />
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.3"
+                android:text="Date" />
 
-            <RelativeLayout
+
+            <Button
+                android:id="@+id/invoiceDate_addPurchaseInvoice_addInvoiceActivity"
+                style="@style/AppTheme.ButtonBorderlessInList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.65">
-
-                <TextView
-                    android:id="@+id/xz3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:gravity="end"
-                    android:text="$"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/itemActualPrice_addItemFragment_SettingsActivity"
-                    style="@style/AppTheme.EditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/xz3"
-                    android:gravity="end"
-                    android:hint="0.00"
-                    android:inputType="numberDecimal"
-                    android:textSize="16sp" />
-
-            </RelativeLayout>
-
+                android:layout_weight="0.7"
+                android:gravity="end|center_vertical"
+                android:padding="10dp"
+                android:text="August 24,2017"
+                android:textSize="16sp"
+                tools:ignore="LabelFor" />
 
         </LinearLayout>
+
+        <include layout="@layout/divider_layout" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Items"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_itemsList_addPurchaseInvoice_SettingsActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" />
+
+        <include layout="@layout/divider_layout" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -191,7 +210,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.35"
-                android:text="Profit" />
+                android:text="Sub Total" />
 
             <RelativeLayout
                 android:layout_width="0dp"
@@ -199,7 +218,7 @@
                 android:layout_weight="0.65">
 
                 <TextView
-                    android:id="@+id/xz1"
+                    android:id="@+id/xz6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -208,12 +227,13 @@
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/itemProfit_addItemFragment_SettingsActivity"
+                    android:id="@+id/invoiceSubTotal_addPurchaseInvoice_addInvoiceActivity"
                     style="@style/AppTheme.EditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/xz1"
+                    android:layout_toEndOf="@+id/xz6"
+                    android:enabled="false"
                     android:gravity="end"
                     android:hint="0.00"
                     android:inputType="numberDecimal"
@@ -224,10 +244,11 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="8dp">
 
 
             <TextView
@@ -253,7 +274,7 @@
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/itemTax_addItemFragment_SettingsActivity"
+                    android:id="@+id/invoiceTax_addPurchaseInvoice_addInvoiceActivity"
                     style="@style/AppTheme.EditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -267,18 +288,18 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="32dp">
+            android:layout_marginTop="8dp">
 
             <TextView
                 style="@style/AppTheme.TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.35"
-                android:text="Other" />
+                android:text="Total" />
 
             <RelativeLayout
                 android:layout_width="0dp"
@@ -286,65 +307,7 @@
                 android:layout_weight="0.65">
 
                 <TextView
-                    android:id="@+id/xz4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:gravity="end"
-                    android:text="%"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/itemOtherTax_addItemFragment_SettingsActivity"
-                    style="@style/AppTheme.EditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/xz4"
-                    android:gravity="end"
-                    android:hint="0.00"
-                    android:inputType="numberDecimal"
-                    android:textSize="16sp" />
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0.25dp"
-                android:layout_weight="0.35"
-                android:background="@color/colorDivider" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0.5dp"
-                android:layout_weight="0.65" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
-
-            <TextView
-                style="@style/AppTheme.TextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.35"
-                android:text="Item Price" />
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.65">
-
-                <TextView
-                    android:id="@+id/xz6"
+                    android:id="@+id/xz10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -353,12 +316,12 @@
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/itemPrice_addItemFragment_SettingsActivity"
+                    android:id="@+id/invoiceTotalPrice_addPurchaseInvoice_addInvoiceActivity"
                     style="@style/AppTheme.EditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/xz6"
+                    android:layout_toEndOf="@+id/xz10"
                     android:enabled="false"
                     android:gravity="end"
                     android:hint="0.00"
@@ -372,7 +335,7 @@
 
 
         <Button
-            android:id="@+id/saveItemButton_addItemFragment_settingsActivity"
+            android:id="@+id/savePurchaseInvoiceButton_addPurchaseInvoice_settingsActivity"
             style="@style/AppTheme.BorderlessButton.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -382,7 +345,7 @@
             android:text="Save"
             android:textSize="18sp" />
 
-    </LinearLayout>
 
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
